@@ -8,7 +8,7 @@ import SpriteKit
 
 class GameViewController: UIViewController {
 
-    var machine: HSceneMachine!
+    var machine: GameSceneMachine!
     
     override func viewDidLoad() {
         super.viewDidLoad()

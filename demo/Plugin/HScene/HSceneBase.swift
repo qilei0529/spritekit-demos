@@ -3,10 +3,7 @@
 //  spritekit-demos
 //
 
-
-import UIKit
 import SpriteKit
-
 
 // 场景调度器基础类
 protocol HSceneMachine {
@@ -31,7 +28,7 @@ enum SceneName {
         }
     }
 }
-
+// 调度器
 class GameSceneMachine: HSceneMachine {
 
     var scenes: [SceneName:HScene] = [SceneName:HScene]()
@@ -72,44 +69,10 @@ class GameSceneMachine: HSceneMachine {
 
 
 class BaseScene: SKScene , HScene {
-    
     var scene_machine: GameSceneMachine?
-    
     func render() {
         print("\(name) render")
     }
 }
 
-class HomeScene: BaseScene {
-    
-    override func render() {
-        super.render()
-        self.backgroundColor = .red
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.scene_machine?.transition(to: .SettingScene )
-    }
-    
-}
 
-class SettingScene: BaseScene {
-    
-    required override init(size: CGSize) {
-        super.init(size: size)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func render() {
-        super.render()
-        self.backgroundColor = .blue
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.scene_machine?.transition(to: .HomeScene )
-    }
-    
-}

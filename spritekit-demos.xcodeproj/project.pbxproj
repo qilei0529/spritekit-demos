@@ -13,6 +13,10 @@
 		BFE0A9691E82FC5F0019F2C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFE0A9671E82FC5F0019F2C5 /* Main.storyboard */; };
 		BFE0A96B1E82FC5F0019F2C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFE0A96A1E82FC5F0019F2C5 /* Assets.xcassets */; };
 		BFE0A96E1E82FC5F0019F2C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFE0A96C1E82FC5F0019F2C5 /* LaunchScreen.storyboard */; };
+		BFE1B9341E927D5D0098FCA5 /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE1B9331E927D5D0098FCA5 /* HomeScene.swift */; };
+		BFE1B9361E927E230098FCA5 /* SettingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE1B9351E927E230098FCA5 /* SettingScene.swift */; };
+		BFE1B9391E927FF30098FCA5 /* HButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE1B9381E927FF30098FCA5 /* HButton.swift */; };
+		BFE1B93C1E9281240098FCA5 /* HUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE1B93B1E9281240098FCA5 /* HUtil.swift */; };
 		BFF641851E91FBC6001567BF /* Dispacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF641841E91FBC6001567BF /* Dispacher.swift */; };
 		BFF641891E91FC57001567BF /* HSceneBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF641881E91FC57001567BF /* HSceneBase.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +30,10 @@
 		BFE0A96A1E82FC5F0019F2C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFE0A96D1E82FC5F0019F2C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFE0A96F1E82FC5F0019F2C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFE1B9331E927D5D0098FCA5 /* HomeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
+		BFE1B9351E927E230098FCA5 /* SettingScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingScene.swift; sourceTree = "<group>"; };
+		BFE1B9381E927FF30098FCA5 /* HButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HButton.swift; sourceTree = "<group>"; };
+		BFE1B93B1E9281240098FCA5 /* HUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUtil.swift; sourceTree = "<group>"; };
 		BFF641841E91FBC6001567BF /* Dispacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dispacher.swift; path = demo/Class/Flux/Dispacher.swift; sourceTree = SOURCE_ROOT; };
 		BFF641881E91FC57001567BF /* HSceneBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSceneBase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,9 +81,35 @@
 			path = demo;
 			sourceTree = "<group>";
 		};
+		BFE1B9321E927CFE0098FCA5 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				BFE1B9331E927D5D0098FCA5 /* HomeScene.swift */,
+				BFE1B9351E927E230098FCA5 /* SettingScene.swift */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		BFE1B9371E927FE40098FCA5 /* HButton */ = {
+			isa = PBXGroup;
+			children = (
+				BFE1B9381E927FF30098FCA5 /* HButton.swift */,
+			);
+			path = HButton;
+			sourceTree = "<group>";
+		};
+		BFE1B93A1E9281110098FCA5 /* HUtil */ = {
+			isa = PBXGroup;
+			children = (
+				BFE1B93B1E9281240098FCA5 /* HUtil.swift */,
+			);
+			path = HUtil;
+			sourceTree = "<group>";
+		};
 		BFF641821E916ADC001567BF /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				BFE1B9321E927CFE0098FCA5 /* Scene */,
 				BFF641831E91FBA3001567BF /* Flux */,
 			);
 			path = Class;
@@ -93,6 +127,8 @@
 		BFF641861E91FC31001567BF /* Plugin */ = {
 			isa = PBXGroup;
 			children = (
+				BFE1B93A1E9281110098FCA5 /* HUtil */,
+				BFE1B9371E927FE40098FCA5 /* HButton */,
 				BFF641871E91FC44001567BF /* HScene */,
 			);
 			path = Plugin;
@@ -178,8 +214,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFE0A9641E82FC5F0019F2C5 /* GameScene.swift in Sources */,
+				BFE1B93C1E9281240098FCA5 /* HUtil.swift in Sources */,
+				BFE1B9361E927E230098FCA5 /* SettingScene.swift in Sources */,
 				BFE0A9661E82FC5F0019F2C5 /* GameViewController.swift in Sources */,
 				BFF641891E91FC57001567BF /* HSceneBase.swift in Sources */,
+				BFE1B9391E927FF30098FCA5 /* HButton.swift in Sources */,
+				BFE1B9341E927D5D0098FCA5 /* HomeScene.swift in Sources */,
 				BFE0A95E1E82FC5F0019F2C5 /* AppDelegate.swift in Sources */,
 				BFF641851E91FBC6001567BF /* Dispacher.swift in Sources */,
 			);
