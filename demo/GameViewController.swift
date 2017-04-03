@@ -5,27 +5,19 @@
 
 import UIKit
 import SpriteKit
-import GameplayKit
 
 class GameViewController: UIViewController {
 
+    var machine: HSceneMachine!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let view = self.view as! SKView? {
             
-            let size = self.view.frame.size
+            self.machine = GameSceneMachine(view: view)
+            self.machine.transition(to: .HomeScene )
             
-            let scene = GameScene(size: size)
-            
-            scene.scaleMode = .aspectFill
-            
-            view.presentScene(scene)
-            
-            view.ignoresSiblingOrder = true
-            
-            view.showsFPS = true
-            view.showsNodeCount = true
         }
     }
 
