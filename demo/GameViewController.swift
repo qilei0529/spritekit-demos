@@ -16,7 +16,7 @@ class GameViewController: UIViewController {
         if let view = self.view as! SKView? {
             
             self.machine = GameSceneMachine(view: view)
-            self.machine.transition(to: .HomeScene )
+            self.machine.transition(to: HomeScene.self)
             
         }
     }

@@ -7,8 +7,7 @@ import SpriteKit
 
 // 场景调度器基础类
 protocol HSceneMachine {
-    var scenes: [ SceneName: HScene ] { get }
-    func transition( to: SceneName )
+    func transition(to scene: BaseScene.Type )
 }
 // 场景基础类
 protocol HScene {
@@ -31,7 +30,6 @@ enum SceneName {
 // 调度器
 class GameSceneMachine: HSceneMachine {
 
-    var scenes: [SceneName:HScene] = [SceneName:HScene]()
     var view: SKView!
     var size: CGSize!
     
@@ -45,33 +43,30 @@ class GameSceneMachine: HSceneMachine {
     }
     
     /// 切换到指定场景
-    func transition(to name: SceneName ) {
-        
-        var scene: BaseScene
-        
-        switch name {
-        case .HomeScene:
-            scene = HomeScene(size: self.size)
-            break;
-        case .SettingScene:
-            scene = SettingScene(size: self.size)
-            break;
-        }
-        scene.scene_machine = self
-        scene.name = name.toString()
-        scene.scaleMode = .aspectFill
-        scene.render()
-        self.view.presentScene(scene)
-        
+    func transition(to scene: BaseScene.Type ) {
+        let s = scene.init( size: self.size )
+        s.scene_machine = self
+        s.scaleMode = .aspectFill
+        s.render()
+        self.view.presentScene(s)
     }
-    
 }
 
 
 class BaseScene: SKScene , HScene {
     var scene_machine: GameSceneMachine?
+    
+    required override init( size: CGSize) {
+        super.init(size: size)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     func render() {
-        print("\(name) render")
+        print("render")
     }
 }
 
